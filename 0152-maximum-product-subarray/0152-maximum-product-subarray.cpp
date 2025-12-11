@@ -3,17 +3,16 @@ public:
     int maxProduct(vector<int>& nums) {
         int n = nums.size();
         int product =INT_MIN;
-        for(int i =0; i<n; i++)
+        int pre = 1; 
+        int suff = 1;
+        for(int i=0; i<n; i++)
         {
-            int temp =1;
-            for(int j=i; j<n; j++)
-            {
-                temp = temp * nums[j];
-                if(temp>product)
-                {
-                    product = temp;
-                }
-            }
+            if(pre ==0) pre = 1;
+            if(suff==0) suff = 1;
+            
+            pre = pre * nums[i];
+            suff = suff * nums[n-i-1];
+            product = max(product, max(pre,suff));
         }
         return product;
     }
