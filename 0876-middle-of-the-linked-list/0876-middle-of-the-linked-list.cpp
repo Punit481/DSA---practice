@@ -20,22 +20,11 @@ public:
             temp = temp->next;
         }
         int cnt2 = 0;
-        if(cnt%2==0)
-        {
-            while(cnt2<cnt/2)
-            {   cnt2++;
-                mid = mid-> next; 
-            }
-        }
-        else if (cnt%2==1)
-        {
-            while(cnt2< (cnt/2))
-            {
-                cnt2++;
-                mid= mid->next;
-            }
+        while(cnt2<cnt/2)
+        {   
+            cnt2++;
+            mid = mid-> next; 
         }
         return mid;
-
     }
 };
