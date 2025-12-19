@@ -23,7 +23,6 @@ public:
             int sum = d1 + d2 + carry;
             carry = sum / 10;
 
-            // create a new node every iteration
             curr->next = new ListNode(sum % 10);
             curr = curr->next;
 
